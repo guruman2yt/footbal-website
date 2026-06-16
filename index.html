@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>FIFA World Cup 2026 Live Hub | Standings, Predictions & Streaming Guide</title>
+    <meta name="description" content="Get the latest 2026 FIFA World Cup standings, live schedules, interactive group stage predictor, streaming guide, and trivia. Stay updated on all 48 teams.">
+    <meta name="keywords" content="FIFA World Cup 2026, World Cup Live standings, World Cup 2026 schedule, where to watch World Cup, World Cup predictions, soccer stream, World Cup brackets">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://worldcup2026live.com/">
+    <meta property="og:title" content="FIFA World Cup 2026 Live Hub | Matches & Standings">
+    <meta property="og:description" content="Interactive 2026 World Cup hub with standings, bracket predictor, live schedules, and geo-targeted streaming guide.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="FIFA World Cup 2026 Live Hub | Matches & Standings">
+    <meta property="twitter:description" content="Interactive 2026 World Cup hub with standings, bracket predictor, live schedules, and geo-targeted streaming guide.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsEvent",
+      "name": "FIFA World Cup 2026",
+      "startDate": "2026-06-11",
+      "endDate": "2026-07-19",
+      "location": [
+        {
+          "@type": "Place",
+          "name": "United States"
+        },
+        {
+          "@type": "Place",
+          "name": "Mexico"
+        },
+        {
+          "@type": "Place",
+          "name": "Canada"
+        }
+      ],
+      "sport": "Soccer",
+      "description": "The 23rd FIFA World Cup, featuring 48 national teams playing in the USA, Canada, and Mexico."
+    }
+    </script>
+</head>
+<body>
+
+    <!-- STADIUM GLOW EFFECT BACKGROUND -->
+    <div class="stadium-glow glow-top-left"></div>
+    <div class="stadium-glow glow-top-right"></div>
+    <div class="pitch-lines-overlay"></div>
+
+    <!-- MAIN HEADER -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo-area">
+                <!-- SPINNING 3D CSS SOCCER BALL -->
+                <div class="soccer-ball-logo">
+                    <div class="ball-inner">
+                        <div class="hex"></div>
+                        <div class="hex"></div>
+                        <div class="hex"></div>
+                        <div class="hex"></div>
+                        <div class="hex"></div>
+                    </div>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-main">WORLD CUP <span class="gold-text">2026</span></span>
+                    <span class="logo-sub">LIVE INTERACTIVE HUB</span>
+                </div>
+            </div>
+            
+            <!-- LIVE COUNTDOWN TO FINAL -->
+            <div class="countdown-container">
+                <span class="countdown-label"><i class="fa-solid fa-trophy glow-gold"></i> ROAD TO METLIFE FINAL:</span>
+                <div id="countdown" class="countdown-timer">
+                    <span class="time-block"><span id="days">00</span>d</span>
+                    <span class="time-block"><span id="hours">00</span>h</span>
+                    <span class="time-block"><span id="mins">00</span>m</span>
+                    <span class="time-block"><span id="secs">00</span>s</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- TOP LEADERBOARD AD SLOT (Adsterra 728x90 / 320x50 Responsive) -->
+    <div class="container ad-wrapper ad-top-leaderboard">
+        <div class="ad-label">SPONSORED ADVERTISEMENT</div>
+        <div class="ad-container" id="adsterra-top">
+            <!-- PLACE ADSTERRA 728x90 OR RESPONSIVE BANNER CODE HERE -->
+            <div class="ad-fallback-banner">
+                <div class="fallback-icon"><i class="fa-solid fa-gamepad"></i></div>
+                <div class="fallback-text">
+                    <h4>Predict & Win the Ultimate Fan Jersey!</h4>
+                    <p>Enter the free sweepstakes by predicting the match outcomes below.</p>
+                </div>
+                <a href="#predictor-section" class="fallback-btn">Play Now</a>
+            </div>
+            <!-- END ADSTERRA CODE -->
+        </div>
+    </div>
+
+    <!-- MAIN LAYOUT -->
+    <main class="container main-layout">
+        
+        <!-- LEFT COLUMN (WIDGETS & TOOLS) -->
+        <section class="left-column">
+            
+            <!-- HERO WELCOME & DYNAMIC MATCH TICKER -->
+            <div class="hero-widget glass-card">
+                <div class="live-indicator-badge">
+                    <span class="pulse-dot"></span> LIVE UPDATES ACTIVE
+                </div>
+                <h1>Experience World Cup 2026 Like Never Before</h1>
+                <p>Track the 48 nations across USA, Canada & Mexico. Predict group stage qualifiers, check real-time schedules, and play our trivia challenge.</p>
+                
+                <!-- Quick Match Ticker -->
+                <div class="ticker-header">
+                    <h3><i class="fa-solid fa-circle-play neon-green-text"></i> Today's Key Matches</h3>
+                </div>
+                <div class="match-ticker" id="quick-match-ticker">
+                    <!-- Dynamic Match Cards inserted via JavaScript -->
+                </div>
+            </div>
+
+            <!-- ADSTERRA NATIVE AD SLOT 1 -->
+            <div class="ad-wrapper ad-native-inline">
+                <div class="ad-label">SPONSORED LINK</div>
+                <div class="ad-container" id="adsterra-native-1">
+                    <div class="ad-fallback-native">
+                        <span class="sponsored-tag">Ad</span>
+                        <a href="https://nordvpn.com/" target="_blank" rel="noopener noreferrer" class="native-link-card">
+                            <i class="fa-solid fa-shield-halved native-icon"></i>
+                            <div class="native-content">
+                                <strong>Watch World Cup From Anywhere!</strong>
+                                <span>Get 63% off NordVPN to safely stream live matches buffer-free.</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTERACTIVE STANDINGS EXPLORER -->
+            <div class="glass-card" id="standings-section">
+                <div class="widget-header">
+                    <h2><i class="fa-solid fa-table-list gold-text"></i> Live Group Standings</h2>
+                    <p class="widget-desc">Select a group (A - L) to inspect the 48-team point tables in real-time.</p>
+                </div>
+                
+                <!-- Group Toggles -->
+                <div class="group-selector-tabs">
+                    <button class="tab-btn active" data-group="A">Group A</button>
+                    <button class="tab-btn" data-group="B">Group B</button>
+                    <button class="tab-btn" data-group="C">Group C</button>
+                    <button class="tab-btn" data-group="D">Group D</button>
+                    <button class="tab-btn" data-group="E">Group E</button>
+                    <button class="tab-btn" data-group="F">Group F</button>
+                    <button class="tab-btn" data-group="G">Group G</button>
+                    <button class="tab-btn" data-group="H">Group H</button>
+                    <button class="tab-btn" data-group="I">Group I</button>
+                    <button class="tab-btn" data-group="J">Group J</button>
+                    <button class="tab-btn" data-group="K">Group K</button>
+                    <button class="tab-btn" data-group="L">Group L</button>
+                </div>
+
+                <!-- Table Container -->
+                <div class="table-responsive">
+                    <table class="standings-table">
+                        <thead>
+                            <tr>
+                                <th>Pos</th>
+                                <th>Team</th>
+                                <th class="col-hide-mobile">P</th>
+                                <th class="col-hide-mobile">W</th>
+                                <th class="col-hide-mobile">D</th>
+                                <th class="col-hide-mobile">L</th>
+                                <th>GD</th>
+                                <th>Pts</th>
+                            </tr>
+                        </thead>
+                        <tbody id="standings-body">
+                            <!-- Populated dynamically by app.js -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="qualification-legend">
+                    <span class="legend-item"><span class="legend-color q-next"></span> Top 2: Advance to Round of 32</span>
+                    <span class="legend-item"><span class="legend-color q-third"></span> Best 3rd place potential</span>
+                </div>
+            </div>
+
+            <!-- INTERACTIVE BRACKET & GROUP PREDICTOR -->
+            <div class="glass-card predictor-card" id="predictor-section">
+                <div class="widget-header">
+                    <span class="hot-badge"><i class="fa-solid fa-fire"></i> POPULAR</span>
+                    <h2><i class="fa-solid fa-wand-magic-sparkles neon-green-text"></i> Interactive Group Predictor</h2>
+                    <p class="widget-desc">Who will advance? Tap on teams in each group to rank them and predict the top 2 qualifiers for the Round of 32.</p>
+                </div>
+
+                <div class="predictor-grid-layout">
+                    <!-- Predictor Box -->
+                    <div class="predictor-selection-box">
+                        <div class="predictor-group-header">
+                            <label for="predictor-group-select">Select Group to Predict:</label>
+                            <select id="predictor-group-select" class="custom-select">
+                                <option value="A">Group A</option>
+                                <option value="B">Group B</option>
+                                <option value="C">Group C</option>
+                                <option value="D">Group D</option>
+                                <option value="E">Group E</option>
+                                <option value="F">Group F</option>
+                                <option value="G">Group G</option>
+                                <option value="H">Group H</option>
+                                <option value="I">Group I</option>
+                                <option value="J">Group J</option>
+                                <option value="K">Group K</option>
+                                <option value="L">Group L</option>
+                            </select>
+                        </div>
+                        
+                        <div class="prediction-list" id="prediction-items-list">
+                            <!-- Filled dynamically by JavaScript. Drag/click to sort -->
+                        </div>
+                        
+                        <div class="predictor-actions">
+                            <button class="secondary-btn" id="reset-predictions-btn"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                            <button class="primary-btn glow-button" id="save-predictions-btn"><i class="fa-solid fa-share-nodes"></i> Share Bracket</button>
+                        </div>
+                    </div>
+
+                    <!-- Predictions Summary Panel -->
+                    <div class="predictor-summary-panel">
+                        <h4>Your Predicted Round of 32 Qualifiers:</h4>
+                        <div class="predicted-teams-grid" id="predicted-teams-container">
+                            <!-- Shows the 24 teams currently qualified by the user's prediction -->
+                            <p class="empty-predictor-msg">Rank groups on the left to fill your bracket.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal for Predictions Share -->
+                <div id="share-modal" class="modal">
+                    <div class="modal-content glass-card">
+                        <span class="close-modal-btn">&times;</span>
+                        <h3><i class="fa-solid fa-trophy gold-text"></i> My 2026 Bracket predictions</h3>
+                        <p>Copy this link or screenshot your predictions to share on social media!</p>
+                        <div class="share-box">
+                            <input type="text" id="share-link-input" readonly value="https://worldcup2026live.com/?pred=MEX,KOR,CAN,SUI,BRA,MAR,USA,TUR...">
+                            <button id="copy-share-link-btn" class="primary-btn">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- "WHERE TO STREAM" GUIDE -->
+            <div class="glass-card" id="streaming-section">
+                <div class="widget-header">
+                    <h2><i class="fa-solid fa-tv neon-green-text"></i> Where to Stream the Matches Live</h2>
+                    <p class="widget-desc">Find free and legal broadcast schedules in your country.</p>
+                </div>
+                
+                <div class="streaming-selector-bar">
+                    <label for="country-stream-select"><i class="fa-solid fa-earth-americas"></i> Select Region:</label>
+                    <select id="country-stream-select" class="custom-select">
+                        <option value="US">🇺🇸 United States</option>
+                        <option value="UK">🇬🇧 United Kingdom</option>
+                        <option value="CA">🇨🇦 Canada</option>
+                        <option value="AU">🇦🇺 Australia</option>
+                        <option value="IN">🇮🇳 India</option>
+                    </select>
+                </div>
+
+                <div class="streaming-details-card" id="streaming-channels-container">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+
+            <!-- ADSTERRA NATIVE AD SLOT 2 -->
+            <div class="ad-wrapper ad-native-inline">
+                <div class="ad-label">SPONSORED LINK</div>
+                <div class="ad-container" id="adsterra-native-2">
+                    <div class="ad-fallback-native">
+                        <span class="sponsored-tag">Ad</span>
+                        <a href="https://store.fifa.com" target="_blank" rel="noopener noreferrer" class="native-link-card">
+                            <i class="fa-solid fa-shirt native-icon"></i>
+                            <div class="native-content">
+                                <strong>Official FIFA World Cup Gear!</strong>
+                                <span>Get authentic jerseys, balls, and collectibles at the official store.</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DWELL-TIME PENALTY trivia game -->
+            <div class="glass-card trivia-widget" id="trivia-section">
+                <div class="trivia-pitch-bg"></div>
+                <div class="widget-header">
+                    <h2><i class="fa-solid fa-circle-question gold-text"></i> World Cup Penalty Shootout Trivia</h2>
+                    <p class="widget-desc">Score goals by answering World Cup questions! Aim for the net by selecting correct answers.</p>
+                </div>
+
+                <div class="trivia-container">
+                    <div class="trivia-scorecard">
+                        <div class="shootout-tracker" id="shootout-tracker">
+                            <!-- Balls and X marks for score status -->
+                        </div>
+                        <div class="trivia-points">Score: <span id="trivia-score">0/5</span></div>
+                    </div>
+
+                    <div class="trivia-quiz-box" id="quiz-box">
+                        <h4 id="question-text">Loading trivia questions...</h4>
+                        <div class="answers-grid" id="answers-grid">
+                            <!-- Interactive buttons -->
+                        </div>
+                    </div>
+
+                    <!-- Penalty Shootout Animation Area -->
+                    <div class="shootout-arena">
+                        <div class="goalpost">
+                            <div class="keeper" id="gk-character"><i class="fa-solid fa-hands-reaching"></i></div>
+                            <div class="ball" id="shootout-ball"><i class="fa-solid fa-soccer-ball"></i></div>
+                        </div>
+                    </div>
+
+                    <div id="trivia-feedback" class="trivia-feedback-message"></div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- RIGHT COLUMN (SIDEBAR) -->
+        <aside class="right-column">
+            
+            <!-- FAN POLL -->
+            <div class="glass-card sidebar-widget">
+                <h3><i class="fa-solid fa-square-poll-vertical gold-text"></i> Live Fan Poll</h3>
+                <p class="widget-desc">Who is your favorite to win the 2026 Golden Boot?</p>
+                <div class="poll-container" id="fan-poll-box">
+                    <div class="poll-option-row" data-option="1">
+                        <button class="poll-btn">Kylian Mbappé (France)</button>
+                        <div class="poll-bar-container">
+                            <div class="poll-bar" style="width: 38%"></div>
+                            <span class="poll-percentage">38%</span>
+                        </div>
+                    </div>
+                    <div class="poll-option-row" data-option="2">
+                        <button class="poll-btn">Lionel Messi (Argentina)</button>
+                        <div class="poll-bar-container">
+                            <div class="poll-bar" style="width: 29%"></div>
+                            <span class="poll-percentage">29%</span>
+                        </div>
+                    </div>
+                    <div class="poll-option-row" data-option="3">
+                        <button class="poll-btn">Erling Haaland (Norway)</button>
+                        <div class="poll-bar-container">
+                            <div class="poll-bar" style="width: 21%"></div>
+                            <span class="poll-percentage">21%</span>
+                        </div>
+                    </div>
+                    <div class="poll-option-row" data-option="4">
+                        <button class="poll-btn">Vinícius Júnior (Brazil)</button>
+                        <div class="poll-bar-container">
+                            <div class="poll-bar" style="width: 12%"></div>
+                            <span class="poll-percentage">12%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ADSTERRA SIDEBAR AD (300x250) -->
+            <div class="ad-wrapper ad-sidebar-square">
+                <div class="ad-label">SPONSORED ADVERTISEMENT</div>
+                <div class="ad-container" id="adsterra-sidebar">
+                    <!-- PLACE ADSTERRA 300x250 BANNER CODE HERE -->
+                    <div class="ad-fallback-square">
+                        <h4>Supercharge Your Stream</h4>
+                        <img src="https://images.unsplash.com/photo-1540747737956-37872404a82f?auto=format&fit=crop&w=300&h=200&q=80" alt="Soccer Stadium Under Lights">
+                        <p>Get instant VPN safety & high-speed streaming for all matches.</p>
+                        <a href="https://nordvpn.com/" target="_blank" rel="noopener noreferrer" class="fallback-btn">Learn More</a>
+                    </div>
+                    <!-- END ADSTERRA CODE -->
+                </div>
+            </div>
+
+            <!-- DYNAMIC MATCH LIST WIDGET -->
+            <div class="glass-card sidebar-widget">
+                <h3><i class="fa-solid fa-calendar-days neon-green-text"></i> Tournament Schedule</h3>
+                <div class="schedule-filters">
+                    <input type="text" id="match-search" placeholder="Search team/group...">
+                </div>
+                <div class="sidebar-match-list" id="sidebar-match-list-container">
+                    <!-- Dynamic matches -->
+                </div>
+            </div>
+
+            <!-- WORLD CUP 2026 FACTS (High SEO Keywords) -->
+            <div class="glass-card sidebar-widget seo-facts-widget">
+                <h3><i class="fa-solid fa-circle-info gold-text"></i> World Cup 2026 Facts</h3>
+                <ul class="facts-list">
+                    <li><strong>48 Teams:</strong> The 2026 tournament is the first in history to feature 48 nations instead of 32.</li>
+                    <li><strong>3 Host Nations:</strong> Jointly hosted by the United States (11 cities), Mexico (3 cities), and Canada (2 cities).</li>
+                    <li><strong>104 Matches:</strong> Expanded format leads to 104 matches, increasing playing schedules to 39 days.</li>
+                    <li><strong>Round of 32:</strong> Top two of each group and the eight best third-placed teams qualify for the new knockout stage.</li>
+                </ul>
+            </div>
+
+        </aside>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-about">
+                <h4>World Cup 2026 Live Hub</h4>
+                <p>An unofficial fan portal for schedules, standings, predictions, and streams. We are not affiliated with FIFA.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#standings-section">Standings</a>
+                <a href="#predictor-section">Predictor</a>
+                <a href="#streaming-section">Streaming Guide</a>
+                <a href="#trivia-section">Trivia game</a>
+            </div>
+            <p class="copyright">&copy; 2026 World Cup Live Hub. Built for soccer fans. Optimize for Adsterra & Google AdSense.</p>
+        </div>
+    </footer>
+
+    <!-- STICKY BOTTOM AD BAR (Highly conversion ad placeholder for Adsterra 320x50 / 728x90) -->
+    <div class="sticky-bottom-ad" id="sticky-ad-bar">
+        <button class="close-sticky-ad" id="close-sticky-ad-btn"><i class="fa-solid fa-circle-xmark"></i></button>
+        <div class="ad-label">SPONSORED</div>
+        <div class="ad-container-sticky" id="adsterra-sticky">
+            <!-- PLACE ADSTERRA STICKY CODE HERE -->
+            <div class="ad-fallback-sticky">
+                <a href="https://nordvpn.com/" target="_blank" rel="noopener noreferrer" class="sticky-affiliate-link">
+                    <span class="pulse-dot"></span> <strong>Watch World Cup Live:</strong> Use a VPN to stream in HD without lag. Get 63% off NordVPN now.
+                </a>
+            </div>
+            <!-- END ADSTERRA CODE -->
+        </div>
+    </div>
+
+    <!-- SOCIAL BAR POPUNDER INJECTION SLOT -->
+    <!-- Place your Adsterra Popunder or Social Bar script right below this -->
+    <div id="adsterra-popunder-slot"></div>
+
+    <!-- JS Core -->
+    <script src="app.js"></script>
+</body>
+</html>
