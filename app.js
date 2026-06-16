@@ -785,3 +785,64 @@ function setupEventListeners() {
         document.getElementById('sticky-ad-bar').style.display = 'none';
     });
 }
+
+/* ==========================================================================
+   OPTIMIZED LAZY-LOADING FOR ADSTERRA ADS (SEO + PERFORMANCE SPEEDUP)
+   ========================================================================== */
+
+const ADS_TO_LOAD = [
+    { containerId: 'adsterra-top', key: 'c797f81d4260581c3f01986f670a4d0c', width: 728, height: 90 },
+    { containerId: 'adsterra-native-1', key: '2a2a1c59f471b6470e0168fcd48d1f06', width: 300, height: 250 },
+    { containerId: 'adsterra-native-2', key: '2a2a1c59f471b6470e0168fcd48d1f06', width: 300, height: 250 },
+    { containerId: 'adsterra-sticky', key: 'c7cb0fc4f5b05bc3b76393fa6da981b0', width: 320, height: 50 }
+];
+
+function loadNextAd(index) {
+    if (index >= ADS_TO_LOAD.length) {
+        // Load background scripts (popunder & social bar) last to not block initial page rendering
+        loadExternalScript('https://pl29762506.effectivecpmnetwork.com/50/db/5e/50db5e42101b14dda5578534dc8a8042.js');
+        loadExternalScript('https://pl29762505.effectivecpmnetwork.com/96/f2/08/96f2086554acf67c012c2d686340022a.js');
+        return;
+    }
+    
+    const ad = ADS_TO_LOAD[index];
+    const container = document.getElementById(ad.containerId);
+    if (!container) {
+        loadNextAd(index + 1);
+        return;
+    }
+    
+    window.atOptions = {
+        'key' : ad.key,
+        'format' : 'iframe',
+        'height' : ad.height,
+        'width' : ad.width,
+        'params' : {}
+    };
+    
+    const invokeScript = document.createElement('script');
+    invokeScript.type = 'text/javascript';
+    invokeScript.src = `https://www.highperformanceformat.com/${ad.key}/invoke.js`;
+    invokeScript.onload = () => {
+        loadNextAd(index + 1);
+    };
+    invokeScript.onerror = () => {
+        loadNextAd(index + 1);
+    };
+    container.appendChild(invokeScript);
+}
+
+function loadExternalScript(src) {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = src;
+    document.body.appendChild(script);
+}
+
+window.addEventListener('load', () => {
+    // Start loading ads sequentially after page load event completes + 500ms delay
+    setTimeout(() => {
+        loadNextAd(0);
+    }, 500);
+});
+
