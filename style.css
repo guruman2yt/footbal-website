@@ -1702,6 +1702,24 @@ a:hover {
     .glass-card {
         padding: 1.2rem;
         border-radius: 16px;
+        margin-bottom: 1.2rem;
+    }
+
+    /* Responsive toggling of country names on mobile */
+    .team-fullname {
+        display: none !important;
+    }
+    
+    .team-shortcode {
+        display: inline !important;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
+
+    .sticky-affiliate-link {
+        font-size: 0.75rem;
+        text-align: center;
+        padding: 0 1.5rem;
     }
 
     .predictor-actions {
@@ -1738,5 +1756,16 @@ a:hover {
 
     .streaming-selector-bar select {
         width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .predicted-teams-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)) !important;
+    }
+    
+    .predicted-card-team {
+        font-size: 0.65rem !important;
+        padding: 0.3rem !important;
     }
 }

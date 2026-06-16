@@ -301,14 +301,16 @@ function renderSidebarMatchList(filterText = '') {
             <div class="sidebar-team-row">
                 <div class="sidebar-team-info">
                     <img src="https://flagcdn.com/w40/${homeTeam.code}.png" alt="${homeTeam.name}" class="team-flag-circle">
-                    <span>${homeTeam.name}</span>
+                    <span class="team-fullname">${homeTeam.name}</span>
+                    <span class="team-shortcode">${match.home}</span>
                 </div>
                 ${match.status !== 'upcoming' ? `<span>${match.homeScore}</span>` : ''}
             </div>
             <div class="sidebar-team-row">
                 <div class="sidebar-team-info">
                     <img src="https://flagcdn.com/w40/${awayTeam.code}.png" alt="${awayTeam.name}" class="team-flag-circle">
-                    <span>${awayTeam.name}</span>
+                    <span class="team-fullname">${awayTeam.name}</span>
+                    <span class="team-shortcode">${match.away}</span>
                 </div>
                 ${match.status !== 'upcoming' ? `<span>${match.awayScore}</span>` : scoreDiv}
             </div>
@@ -337,7 +339,8 @@ function renderStandings(groupLetter) {
             <td><strong>${index + 1}</strong></td>
             <td class="team-cell">
                 <img src="https://flagcdn.com/w40/${team.code}.png" alt="${team.name}" class="team-flag-circle">
-                <span>${team.name} <span class="group-tag" style="opacity:0.5; font-size:0.75rem;">(${team.id})</span></span>
+                <span class="team-fullname">${team.name}</span>
+                <span class="team-shortcode">${team.id}</span>
             </td>
             <td class="col-hide-mobile">${team.played}</td>
             <td class="col-hide-mobile">${team.won}</td>
@@ -386,7 +389,8 @@ function renderPredictorGroup(groupLetter) {
             <div class="predict-team-details">
                 <span class="rank-badge">${index + 1}</span>
                 <img src="https://flagcdn.com/w40/${team.code}.png" alt="${team.name}" class="team-flag-circle">
-                <span>${team.name}</span>
+                <span class="team-fullname">${team.name}</span>
+                <span class="team-shortcode">${teamId}</span>
             </div>
             <div class="predict-controls">
                 <button class="predict-arrow up-arrow" ${index === 0 ? 'disabled style="opacity:0.3;"' : ''}><i class="fa-solid fa-arrow-up"></i></button>
